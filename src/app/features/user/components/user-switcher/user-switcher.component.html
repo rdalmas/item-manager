@@ -1,0 +1,9 @@
+<mat-form-field appearance="outline">
+  <mat-select [(ngModel)]="selectedUserId" 
+              (selectionChange)="onUserChange()"
+              [panelClass]="'user-switcher-panel'">
+    <mat-option *ngFor="let user of users" [value]="user.id">
+      {{user.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

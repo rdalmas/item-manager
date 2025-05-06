@@ -1,0 +1,82 @@
+<div class="item-detail-container">
+  <div class="item-header">
+    <button mat-icon-button [routerLink]="['/items']">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <div class="title-section">
+      <h1>{{item?.name}}</h1>
+      <p class="subtitle">{{item?.description}}</p>
+    </div>
+    <button *ngIf="canWithdraw" 
+        mat-stroked-button 
+        color="warn" 
+        (click)="withdrawProposal()">
+    <mat-icon>close</mat-icon>
+    Withdraw
+    </button>
+    <button mat-stroked-button (click)="viewHistory()">
+      <mat-icon>history</mat-icon>
+      View History
+    </button>
+  </div>
+
+  <mat-card>
+    <mat-card-content>
+      <section class="info-section">
+        <div class="info-grid">
+          <div class="info-item">
+            <label>Item ID</label>
+            <span>#{{item?.id}}</span>
+          </div>
+          <div class="info-item">
+            <label>Status</label>
+            <mat-chip-set>
+              <mat-chip [class.has-proposal]="activeProposal" [removable]="false">
+                {{activeProposal ? 'Has Active Proposal' : 'No Active Proposals'}}
+              </mat-chip>
+            </mat-chip-set>
+          </div>
+        </div>
+      </section>
+
+      <mat-divider></mat-divider>
+
+      <section class="parties-section">
+        <h2>Involved Parties</h2>
+        <div class="parties-grid">
+          <div *ngFor="let partyId of item?.ownerIds" class="party-card">
+            <div class="party-header">
+              <mat-icon>group</mat-icon>
+              <h3>Party {{partyId}}</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section *ngIf="activeProposal" class="proposal-section">
+        <mat-divider></mat-divider>
+        <h2>Current Proposal</h2>
+        <div class="ratios-grid">
+          <div *ngFor="let ratio of activeProposal.ratios" class="ratio-item">
+            <span class="party-name">Party {{ratio.partyId}}</span>
+            <div class="percentage-bar">
+              <div class="fill" [style.width]="ratio.percentage + '%'"></div>
+              <span class="value">{{ratio.percentage}}%</span>
+            </div>
+          </div>
+        </div>
+        
+        <div *ngIf="canAcceptOrCounter" class="proposal-actions">
+          <button mat-stroked-button color="accent" (click)="rejectWithCounter()">
+            <mat-icon>reply</mat-icon>
+            Counter
+          </button>
+          <button mat-flat-button color="primary" (click)="acceptProposal()">
+            <mat-icon>check</mat-icon>
+            Accept
+          </button>
+        </div>
+      </section>
+    </mat-card-content>
+  </mat-card>
+</div>

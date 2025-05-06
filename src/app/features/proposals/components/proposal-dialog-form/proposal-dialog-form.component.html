@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>{{ data.isCounter ? 'Create Counter Proposal' : 'Create New Proposal' }}</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="proposalForm">
+    <div class="ratios-section">
+      <h3>Payment Ratios</h3>
+      <div formArrayName="ratios">
+        <div *ngFor="let ratio of ratios.controls; let i=index" [formGroupName]="i" class="ratio-item">
+          <mat-form-field>
+            <mat-label>{{ getPartyName(ratio.get('partyId')?.value) }}</mat-label>
+            <input matInput type="number" formControlName="percentage">
+            <span matSuffix>%</span>
+            <mat-error *ngIf="ratio.get('percentage')?.invalid">
+              Percentage must be between 0 and 100
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+    <mat-form-field class="message-field">
+      <mat-label>{{ data.isCounter ? 'Required Message' : 'Optional Message' }}</mat-label>
+      <textarea matInput formControlName="message" rows="3"></textarea>
+      <mat-error *ngIf="proposalForm.get('message')?.errors?.['required']">
+        Message is required for counter proposals
+      </mat-error>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" 
+          [disabled]="proposalForm.invalid || !totalPercentageValidator()"
+          (click)="onSubmit()">
+    Submit Proposal
+  </button>
+</mat-dialog-actions>

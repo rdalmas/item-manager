@@ -1,0 +1,73 @@
+<div class="proposal-history">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Proposal History</mat-card-title>
+      <mat-card-subtitle>History of all proposals made for this item</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <div class="timeline" *ngIf="proposals.length > 0; else noProposals">
+        <div class="proposal-item" *ngFor="let proposal of proposals">
+          <div class="timeline-marker"></div>
+          <mat-card class="proposal-card">
+            <div class="proposal-header">
+              <div class="metadata">
+                <span class="date">{{proposal.createdDate | date:'medium'}}</span>
+                <span class="creator">by Party {{proposal.createdBy}}</span>
+              </div>
+              <mat-chip-listbox>
+                <mat-chip-option [ngClass]="proposal.status.toLowerCase()" selected disabled>
+                  {{proposal.status}}
+                </mat-chip-option>
+              </mat-chip-listbox>
+            </div>
+
+            <div class="proposal-content">
+              <div class="ratios-grid">
+                <div *ngFor="let ratio of proposal.ratios" class="ratio-item">
+                  <span class="party">Party {{ratio.partyId}}</span>
+                  <div class="percentage-bar">
+                    <div class="percentage-fill" [style.width]="ratio.percentage + '%'"></div>
+                    <span class="percentage-text">{{ratio.percentage}}%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div *ngIf="proposal.message" class="message">
+                <mat-icon>comment</mat-icon>
+                <span>{{proposal.message}}</span>
+              </div>
+
+              <div *ngIf="proposal.partyAcceptances?.length" class="responses">
+                <h4>Responses:</h4>
+                <div class="response-grid">
+                  <div *ngFor="let acceptance of proposal.partyAcceptances" class="response-item">
+                    <span>Party {{acceptance.partyId}}</span>
+                    <mat-icon [class]="acceptance.accepted ? 'accepted' : 'rejected'">
+                      {{acceptance.accepted ? 'check_circle' : 'cancel'}}
+                    </mat-icon>
+                    <span class="response-date">{{acceptance.date | date:'short'}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+
+      <ng-template #noProposals>
+        <div class="no-proposals">
+          <mat-icon>history</mat-icon>
+          <p>No proposals have been made for this item yet.</p>
+        </div>
+      </ng-template>
+    </mat-card-content>
+
+    <mat-card-actions align="end">
+      <button mat-button [routerLink]="['/items', itemId]">
+        <mat-icon>arrow_back</mat-icon>
+        Back to Item
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

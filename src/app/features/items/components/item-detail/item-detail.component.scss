@@ -1,0 +1,144 @@
+.item-detail-container {
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 0 24px;
+
+  .item-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+
+    .title-section {
+      flex: 1;
+      
+      h1 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      .subtitle {
+        margin: 4px 0 0;
+        color: rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+
+  section {
+    padding: 24px 0;
+
+    h2 {
+      font-size: 18px;
+      font-weight: 500;
+      margin: 0 0 16px;
+    }
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+
+    .info-item {
+      label {
+        display: block;
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 12px;
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  .parties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+
+    .party-card {
+      background: rgba(0, 0, 0, 0.02);
+      border-radius: 8px;
+      padding: 16px;
+
+      .party-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+
+        h3 {
+          margin: 0;
+          font-size: 16px;
+          font-weight: 500;
+        }
+      }
+
+      .party-members {
+        display: grid;
+        gap: 8px;
+
+        .member {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .proposal-section {
+    .ratios-grid {
+      margin: 24px 0;
+
+      .ratio-item {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 16px;
+        align-items: center;
+        margin-bottom: 12px;
+
+        .percentage-bar {
+          position: relative;
+          height: 24px;
+          background: rgba(0, 0, 0, 0.04);
+          border-radius: 12px;
+          overflow: hidden;
+
+          .fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: #1976d2;
+            opacity: 0.2;
+          }
+
+          .value {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .proposal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      margin-top: 24px;
+    }
+  }
+}
+
+.mat-mdc-chip {
+  &.has-proposal {
+    background-color: #1976d2;
+    color: white;
+  }
+}
+  

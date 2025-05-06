@@ -1,0 +1,43 @@
+:host {
+    display: block;
+    padding: 16px;
+  }
+  
+  table {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mat-column-actions {
+    width: 80px;
+    text-align: center;
+  }
+  
+  .mat-column-hasProposals {
+    width: 100px;
+    text-align: center;
+  }
+  
+  tr.mat-row:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.actions-cell {
+  .action-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .action-button {
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+  }
+}
+
+// Make sure the actions column has enough width for both buttons
+.mat-column-actions {
+  min-width: 100px;
+}

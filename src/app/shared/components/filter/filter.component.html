@@ -1,0 +1,35 @@
+<div class="filter-container">
+  <mat-form-field appearance="outline">
+    <mat-label>Search items</mat-label>
+    <input matInput [(ngModel)]="filters.search" (ngModelChange)="onFilterChange()">
+    <button *ngIf="filters.search" matSuffix mat-icon-button (click)="clearSearch()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Sort By</mat-label>
+    <mat-select [(ngModel)]="filters.sortBy" (ngModelChange)="onFilterChange()">
+      <mat-option value="name">Name</mat-option>
+      <mat-option value="date">Date Modified</mat-option>
+      <mat-option value="status">Status</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Sort Direction</mat-label>
+    <mat-select [(ngModel)]="filters.sortDirection" (ngModelChange)="onFilterChange()">
+      <mat-option value="asc">Ascending</mat-option>
+      <mat-option value="desc">Descending</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Has Proposals</mat-label>
+    <mat-select [(ngModel)]="filters.hasProposals" (ngModelChange)="onFilterChange()">
+      <mat-option [value]="undefined">All</mat-option>
+      <mat-option [value]="true">With Proposals</mat-option>
+      <mat-option [value]="false">Without Proposals</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

@@ -1,0 +1,39 @@
+<div class="proposal-list">
+    <table mat-table [dataSource]="proposals">
+      <ng-container matColumnDef="itemName">
+        <th mat-header-cell *matHeaderCellDef>Item</th>
+        <td mat-cell *matCellDef="let proposal">{{proposal.itemName}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="createdDate">
+        <th mat-header-cell *matHeaderCellDef>Created</th>
+        <td mat-cell *matCellDef="let proposal">{{proposal.createdDate | date:'medium'}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let proposal">
+          <span class="status-badge" [attr.data-status]="proposal.status">
+            {{proposal.status}}
+          </span>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="totalParties">
+        <th mat-header-cell *matHeaderCellDef>Parties</th>
+        <td mat-cell *matCellDef="let proposal">{{proposal.ratios.length}}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let proposal">
+          <button mat-icon-button [routerLink]="['/proposals', proposal.id]">
+            <mat-icon>visibility</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

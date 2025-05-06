@@ -1,0 +1,16 @@
+<div class="app-container">
+    <mat-toolbar color="primary">
+      <span>Item Manager</span>
+      <span class="spacer"></span>
+      <app-notification></app-notification>
+      <app-user-switcher></app-user-switcher>
+    </mat-toolbar>
+  
+    <div class="content-container">
+      <main>
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  
+    <app-loading></app-loading>
+</div>

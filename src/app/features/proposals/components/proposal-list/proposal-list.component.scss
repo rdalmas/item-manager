@@ -1,0 +1,44 @@
+.proposal-list {
+    padding: 24px;
+
+    table {
+        width: 100%;
+        background-color: var(--mat-sys-surface);
+        box-shadow: 0 2px 4px var(--mat-sys-outline);
+    }
+
+    .mat-column-actions {
+        width: 80px;
+        text-align: center;
+    }
+
+    .mat-column-status {
+        width: 120px;
+    }
+
+    .status-badge {
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        text-transform: capitalize;
+
+        &[data-status='pending'] {
+            background-color: var(--mat-sys-secondary);
+            color: var(--mat-sys-on-secondary);
+        }
+
+        &[data-status='accepted'] {
+            background-color: var(--mat-sys-primary);
+            color: var(--mat-sys-on-primary);
+        }
+
+        &[data-status='rejected'] {
+            background-color: var(--mat-sys-error);
+            color: var(--mat-sys-on-error);
+        }
+    }
+}
+
+tr.mat-row:hover {
+    background-color: var(--mat-sys-outline);
+}

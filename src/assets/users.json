@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "email": "alice.johnson@example.com",
+    "partyId": 1
+  },
+  {
+    "id": 2,
+    "name": "Bob Smith",
+    "email": "bob.smith@example.com",
+    "partyId": 2
+  },
+  {
+    "id": 3,
+    "name": "Charlie Brown",
+    "email": "charlie.brown@example.com",
+    "partyId": 3
+  },
+  {
+    "id": 4,
+    "name": "Diana Prince",
+    "email": "diana.prince@example.com",
+    "partyId": 4
+  },
+  {
+    "id": 5,
+    "name": "Edward King",
+    "email": "edward.king@example.com",
+    "partyId": 5
+  },
+  {
+    "id": 6,
+    "name": "Fiona Green",
+    "email": "fiona.green@example.com",
+    "partyId": 6
+  },
+  {
+    "id": 7,
+    "name": "Grace Lee",
+    "email": "grace.lee@example.com",
+    "partyId": 1
+  },
+  {
+    "id": 8,
+    "name": "Henry Moore",
+    "email": "henry.moore@example.com",
+    "partyId": 3
+  }
+]

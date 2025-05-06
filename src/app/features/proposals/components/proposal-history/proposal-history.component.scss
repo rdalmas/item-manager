@@ -1,0 +1,175 @@
+.proposal-history {
+  max-width: 800px;
+  margin: 24px auto;
+
+  .timeline {
+    position: relative;
+    padding: 24px 0;
+
+    .proposal-item {
+      position: relative;
+      padding-left: 48px;
+      margin-bottom: 32px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-marker {
+        position: absolute;
+        left: 0;
+        top: 24px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #1976d2;
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 2px #1976d2;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 50%;
+          top: 12px;
+          bottom: -44px;
+          width: 2px;
+          background-color: rgba(25, 118, 210, 0.2);
+        }
+      }
+
+      &:last-child .timeline-marker::before {
+        display: none;
+      }
+    }
+  }
+
+  .proposal-card {
+    padding: 10px 16px;
+    .proposal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+
+      .metadata {
+        .date {
+          color: rgba(0, 0, 0, 0.6);
+          font-size: 14px;
+        }
+        .creator {
+          margin-left: 8px;
+          font-weight: 500;
+        }
+      }
+
+      mat-chip {
+        &.pending { background: #FFB74D; }
+        &.accepted { background: #81C784; }
+        &.withdrawn { background: #E57373; }
+        &.countered { background: #64B5F6; }
+      }
+    }
+
+    .ratios-grid {
+      display: grid;
+      gap: 12px;
+      margin: 16px 0;
+
+      .ratio-item {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        align-items: center;
+        gap: 16px;
+
+        .percentage-bar {
+          position: relative;
+          height: 24px;
+          background: rgba(0, 0, 0, 0.04);
+          border-radius: 12px;
+          overflow: hidden;
+
+          .percentage-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: #1976d2;
+            opacity: 0.2;
+          }
+
+          .percentage-text {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .message {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 16px 0;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.04);
+      border-radius: 4px;
+
+      mat-icon {
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 20px;
+      }
+    }
+
+    .responses {
+      margin-top: 16px;
+      
+      h4 {
+        margin: 0 0 8px;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.6);
+      }
+
+      .response-grid {
+        display: grid;
+        gap: 8px;
+
+        .response-item {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          mat-icon {
+            font-size: 16px;
+            width: 16px;
+            height: 16px;
+
+            &.accepted { color: #4CAF50; }
+            &.rejected { color: #F44336; }
+          }
+
+          .response-date {
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.6);
+          }
+        }
+      }
+    }
+  }
+}
+
+.no-proposals {
+  text-align: center;
+  padding: 48px 0;
+  color: rgba(0, 0, 0, 0.6);
+
+  mat-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+  }
+}

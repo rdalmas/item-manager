@@ -1,0 +1,13 @@
+.filter-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+
+  mat-form-field {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,121 @@
+[
+  {
+    "id": 1,
+    "name": "Shared Equipment",
+    "description": "Cost of maintaining shared office equipment.",
+    "totalCost": 10000,
+    "ownerIds": [1, 2]
+  },
+  {
+    "id": 2,
+    "name": "Project A",
+    "description": "Expenses for Project A collaboration.",
+    "totalCost": 20000,
+    "ownerIds": [1, 3]
+  },
+  {
+    "id": 3,
+    "name": "Cloud Service Subscription",
+    "description": "Annual subscription for shared cloud storage.",
+    "totalCost": 5000,
+    "ownerIds": [2, 3, 4]
+  },
+  {
+    "id": 4,
+    "name": "Conference Room Setup",
+    "description": "Cost of setting up the shared conference room.",
+    "totalCost": 15000,
+    "ownerIds": [1, 2, 3, 5]
+  },
+  {
+    "id": 5,
+    "name": "Training Materials",
+    "description": "Shared cost of employee training materials.",
+    "totalCost": 3000,
+    "ownerIds": [4, 5]
+  },
+  {
+    "id": 6,
+    "name": "Office Renovation",
+    "description": "Shared expenses for renovating the office.",
+    "totalCost": 25000,
+    "ownerIds": [1, 5]
+  },
+  {
+    "id": 7,
+    "name": "Party A - Laptop Purchase",
+    "description": "Laptop purchased by Party A for personal use.",
+    "totalCost": 1200,
+    "ownerIds": [1]
+  },
+  {
+    "id": 8,
+    "name": "Marketing Campaign",
+    "description": "Shared expenses for a joint marketing campaign.",
+    "totalCost": 18000,
+    "ownerIds": [3, 4, 5]
+  },
+  {
+    "id": 9,
+    "name": "Team Building Event",
+    "description": "Cost of organizing a team-building retreat.",
+    "totalCost": 8000,
+    "ownerIds": [2, 4]
+  },
+  {
+    "id": 10,
+    "name": "Party B - Printer Purchase",
+    "description": "Printer purchased by Party B for personal use.",
+    "totalCost": 400,
+    "ownerIds": [2]
+  },
+  {
+    "id": 11,
+    "name": "Party C - Software License",
+    "description": "Software license purchased by Party C.",
+    "totalCost": 900,
+    "ownerIds": [3]
+  },
+  {
+    "id": 12,
+    "name": "Shared Development Tool",
+    "description": "Cost for a development tool shared between multiple parties.",
+    "totalCost": 12000,
+    "ownerIds": [3, 4]
+  },
+  {
+    "id": 13,
+    "name": "Party D - Desk Furniture",
+    "description": "Desk furniture purchased by Party D.",
+    "totalCost": 1800,
+    "ownerIds": [4]
+  },
+  {
+    "id": 14,
+    "name": "Party E - Projector Purchase",
+    "description": "Projector purchased by Party E for meetings.",
+    "totalCost": 1300,
+    "ownerIds": [5]
+  },
+  {
+    "id": 15,
+    "name": "Party F - Subscription Service",
+    "description": "Subscription service purchased by Party F.",
+    "totalCost": 600,
+    "ownerIds": [6]
+  },
+  {
+    "id": 16,
+    "name": "New Product Development",
+    "description": "Expenses for developing a new product.",
+    "totalCost": 30000,
+    "ownerIds": [2, 3, 5]
+  },
+  {
+    "id": 17,
+    "name": "Party F - Office Supplies",
+    "description": "Office supplies purchased by Party F.",
+    "totalCost": 500,
+    "ownerIds": [6]
+  }
+]
